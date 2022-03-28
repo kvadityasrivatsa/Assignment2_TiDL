@@ -1,3 +1,4 @@
+import sys
 import numpy as np
 import random
 from tqdm import tqdm
@@ -240,7 +241,7 @@ if __name__ == "__main__":
                                                 device=device)
                 print(f">> testacc: {agg_logs['test_acc']:5.4f}")
                 print()
-                if n_layers == 1:
-                    break
+                # if n_layers == 1:
+                #     break
 
     print(f"Training and evaluation complete")
