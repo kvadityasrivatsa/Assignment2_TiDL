@@ -20,8 +20,6 @@ torch.backends.cudnn.deterministic = True
 
 
 def dataloader(cites_path,content_path):
-#     cites_path = '../input/citeseer/citeseer.cites'
-#     content_path = '../input/citeseer/citeseer.content'
 
     feats, labels = [], []
     id2node, node2id = {}, {}
@@ -219,7 +217,7 @@ if __name__ == "__main__":
         raise Exception("Invalid GNN type specified. Choose from ['gnn','gsage']")
 
     print(f"\nLoading data\n")
-    (feats, adj, deg, labels), (train_ids, test_ids), (id2label, label2id, id2node, node2id), (N, Fc, L) = dataloader(cites_path='../input/citeseer/citeseer.cites',content_path='../input/citeseer/citeseer.content')
+    (feats, adj, deg, labels), (train_ids, test_ids), (id2label, label2id, id2node, node2id), (N, Fc, L) = dataloader(cites_path='data/citeseer/citeseer.cites',content_path='data/citeseer/citeseer.content')
 
     n_layers_list = [1,2,3]
     adj_norm_list = ['row','col','sym']

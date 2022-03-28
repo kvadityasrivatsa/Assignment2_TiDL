@@ -8,6 +8,26 @@ warnings.filterwarnings("ignore")
 torch.manual_seed(2018114018)
 torch.backends.cudnn.deterministic = True
 
+class GNNLayer(nn.Module):
+    def __init__(self):
+        pass
+
+    def initialize_weights(self):
+        pass
+
+    def forward(self,feats,adj):
+        
+        #1 message-passing step
+
+        #2 aggregation step
+
+        #3 combination step
+
+        # output step
+
+        pass
+
+
 class GCNLayer(nn.Module):
     
     def __init__(self,in_dim,feat_dim,out_dim,
@@ -35,10 +55,10 @@ class GCNLayer(nn.Module):
                 
     def forward(self,feats,adj):
         feats = self.dropout(feats) if self.dropout else feats
-        x = adj @ feats            # messaging
-        x = x @ self.W + self.b    # aggregation
+        x = adj @ feats            # message-passing
+        x = x @ self.W + self.b    # aggregation & combination
         x = self.activation(x) if self.activation else x
-        return x
+        return x    # output
 
 
 class GCN(nn.Module):
