@@ -1,0 +1,7 @@
+numpy
+random
+tqdm
+scikit-learn
+torch
+re
+sentencepiece
